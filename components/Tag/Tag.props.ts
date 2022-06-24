@@ -1,6 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-export interface IParagraphProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
+export interface ITagProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     children: ReactNode;
-    fontSize?: 'sm' | 'md' | 'lg'
+    size?: 's' | 'm';
+    color?: 'ghost' | 'red' | 'grey' | 'green' | 'primary';
+    href?: string;
 }

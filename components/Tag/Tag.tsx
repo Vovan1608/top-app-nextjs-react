@@ -1,18 +1,27 @@
 import cn from 'classnames';
 
-import { IParagraphProps } from './Ptag.props';
-import styles from './Ptag.module.css';
+import { ITagProps } from './Tag.props';
+import styles from './Tag.module.css';
 
-export const Ptag = ({ children, fontSize = 'md', className, ...props }: IParagraphProps): JSX.Element => {
+export const Tag = ({ size = 'm', color = 'ghost', href, children, className, ...props }: ITagProps): JSX.Element => {
     return (
-        <p className={cn(styles.paragraph, className, {
-            [styles.sm]: fontSize === 'sm',
-            [styles.md]: fontSize === 'md',
-            [styles.lg]: fontSize === 'lg'
-        })}
+        <div
+            className={cn(styles.tag, className, {
+                [styles.s]: size === 's',
+                [styles.m]: size === 'm',
+                [styles.ghost]: color === 'ghost',
+                [styles.red]: color === 'red',
+                [styles.grey]: color === 'grey',
+                [styles.green]: color === 'green',
+                [styles.primary]: color === 'primary'
+            })}
             {...props}
         >
-            {children}
-        </p>
+            {
+                href
+                    ? <a href={href}>{children}</a>
+                    : <>{children}</>
+            }
+        </div>
     );
 }
