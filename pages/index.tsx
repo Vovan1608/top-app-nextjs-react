@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { GetStaticProps } from 'next';
+import React, { useState } from 'react';
 import { Button, Htag, Ptag, Raiting, Tag } from '../components';
+import { withLayout } from '../layout/Layout';
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 	const [raiting, setRaiting] = useState<number>(4);
 
 	return (
 		<>
-			<Htag tag='h1'>Counter: times</Htag>
+			<Htag tag='h1'>Header</Htag>
 			<Button appearance='primary' arrow='right'>Button</Button>
 			<Button appearance='ghost' arrow='down'>Button</Button>
 			<Ptag fontSize='lg'>Large</Ptag>
@@ -20,4 +22,14 @@ export default function Home(): JSX.Element {
 			<Raiting raiting={raiting} setRaiting={setRaiting} isAditable />
 		</>
 	);
+}
+
+export default withLayout(Home);
+
+export const getStaticProps: GetStaticProps = async (params: type) => {
+	return {
+		props: {
+
+		}
+	};
 }
