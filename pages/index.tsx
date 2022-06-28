@@ -1,9 +1,12 @@
 import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
+import axios from 'axios';
+
 import { Button, Htag, Ptag, Raiting, Tag } from '../components';
 import { withLayout } from '../layout/Layout';
+import { IMenuItem } from '../interfaces/menu.interface';
 
-function Home(): JSX.Element {
+function Home({ menu }: IHomeProps): JSX.Element {
 	const [raiting, setRaiting] = useState<number>(4);
 
 	return (
@@ -20,16 +23,28 @@ function Home(): JSX.Element {
 			<Tag color='primary'>Primary</Tag>
 			<Tag size='m' color='grey'>Primary</Tag>
 			<Raiting raiting={raiting} setRaiting={setRaiting} isAditable />
+			<ul>
+				{menu.map(item => (<li key={item._id.secondCategory}>{item._id.secondCategory}</li>))}
+			</ul>
 		</>
 	);
 }
 
 export default withLayout(Home);
 
-export const getStaticProps: GetStaticProps = async (params: type) => {
+export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
+	const firstCategory = 0;
+	const { data: menu } = await axios.get<IMenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/menu');
+
 	return {
 		props: {
-
+			menu,
+			firstCategory
 		}
 	};
+}
+
+interface IHomeProps extends Record<string, unknown> {
+	menu: IMenuItem[];
+	firstCategory: number;
 }

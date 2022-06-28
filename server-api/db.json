@@ -1,0 +1,103 @@
+{
+    "menu": [
+        {
+            "_id": {
+                "secondCategory": "Analitics"
+            },
+            "pages": [
+                {
+                    "alias": "financial-analitics",
+                    "title": "Ginancial analitic`s courses",
+                    "_id": "665sdkljn796753643232",
+                    "category": "financial analitics"
+                },
+                {
+                    "alias": "big data",
+                    "title": "Big data courses",
+                    "_id": "665sdydhjke4553643232",
+                    "category": "Big Data"
+                },
+                {
+                    "alias": "data-science",
+                    "title": "Data science courses",
+                    "_id": "665sdydhjkeiut5413232",
+                    "category": "Data Science"
+                }
+            ]
+        },
+        {
+            "_id": {
+                "secondCategory": "Business"
+            },
+            "pages": [
+                {
+                    "alias": "finansovaya-gramotnost",
+                    "title": "Finance courses",
+                    "_id": "6659802n796753643232",
+                    "category": "finance gramotnost"
+                },
+                {
+                    "alias": "entrepreneurs",
+                    "title": "Entrepreneurs courses",
+                    "_id": "665sdydh321yum8743232",
+                    "category": "entrepreneurs"
+                }
+            ]
+        },
+        {
+            "_id": {
+                "secondCategory": "Design"
+            },
+            "pages": [
+                {
+                    "alias": "adobe photoshop",
+                    "title": "Adobe photoshop courses",
+                    "_id": "6695102n796753643232",
+                    "category": "design"
+                },
+                {
+                    "alias": "web designer",
+                    "title": "Web designer courses",
+                    "_id": "665sdydh3356758743232",
+                    "category": "designer"
+                }
+            ]
+        }
+    ],
+    "byAlias": {
+        "tags": [
+            "adobe photoshop",
+            "design",
+            "computer design",
+            "web design"
+        ],
+        "_id": "6659802n321oi5343232",
+        "secondCategory": "Design",
+        "alias": "photoshop",
+        "title": "Photoshop courses",
+        "category": "photoshop",
+        "seoText": "",
+        "tagsTitle": "Skills",
+        "metaTitle": "Bast practices",
+        "metaDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ipsum officiis cum ad repudiandae dolore quaerat enim assumenda laboriosam laudantium.",
+        "firstCategory": 0,
+        "advantages": [
+            {
+                "_id": "665sdydh321yum8825642",
+                "title": "",
+                "description": ""
+            }
+        ],
+        "createdAt": "2021-03-18T17:57:10.334Z",
+        "updatedAt": "2021-04-16T10:07:15.995Z",
+        "_v": 0,
+        "hh": {
+            "_id": "66s5r1yn796753643232",
+            "count": 13000,
+            "juniorSalary": 35000,
+            "middleSalary": 110000,
+            "seniorSalary": 185000,
+            "updatedAt": "2021-04-16T10:07:15.995Z"
+        }
+    }
+}
