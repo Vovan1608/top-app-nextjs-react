@@ -6,6 +6,7 @@ import { withLayout } from '../../layout/Layout';
 import { IMenuItem } from '../../interfaces/menu.interface';
 import { ITopPageModel } from '../../interfaces/page.interface';
 import { ParsedUrlQuery } from 'querystring';
+import { firstLevelMenu } from '../../helpers/helpers';
 
 const firstCategory = 0;
 
@@ -30,6 +31,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<ICourseProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
     if (!params) {
+        return {
+            notFound: true
+        };
+    }
+
+    const firstCategoryItem = firstLevelMenu.find(menu => menu.route === params.type);
+
+    if (!firstCategoryItem) {
         return {
             notFound: true
         };
