@@ -23,9 +23,6 @@ function Home({ menu }: IHomeProps): JSX.Element {
 			<Tag color='primary'>Primary</Tag>
 			<Tag size='m' color='grey'>Primary</Tag>
 			<Raiting raiting={raiting} setRaiting={setRaiting} isAditable />
-			<ul>
-				{menu.map(item => (<li key={item._id.secondCategory}>{item._id.secondCategory}</li>))}
-			</ul>
 		</>
 	);
 }

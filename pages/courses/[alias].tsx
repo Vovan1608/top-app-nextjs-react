@@ -12,7 +12,7 @@ const firstCategory = 0;
 function Course({ menu, page }: ICourseProps): JSX.Element {
     return (
         <>
-            {page.length}
+            Abra
         </>
     );
 }
@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { data: menu } = await axios.get<IMenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/menu');
 
     return {
-        paths: menu.flatMap(m => m.pages.map(p => '/courses' + p.alias)),
+        paths: menu.flatMap(m => m.pages.map(p => '/courses/' + p.alias)),
         fallback: true
     };
 };
